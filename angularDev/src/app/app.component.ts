@@ -340,7 +340,7 @@ export class AppComponent implements OnInit{
 
                     var singleMarkerIconClass = keyProp.icon;
                     if (key == "vehicles") {
-                        controlLayerIcon = "ic_dealership_vehicle";
+                        controlLayerIcon = "ic_garage_vehicle";
                     } else {
                     controlLayerIcon = singleMarkerIconClass;
                     };
@@ -492,8 +492,7 @@ export class AppComponent implements OnInit{
         {
             name: 'Train',
             vouchers: [
-                {value: 1.2, viewValue: 'Train: Conductor'},
-                {value: 0.2, viewValue: 'Train: Strength'},
+                {value: 0.3, viewValue: 'Train: Conductor'},
                 {value: 0.2, viewValue: 'Train: Player'}
             ]
         }
@@ -517,7 +516,7 @@ export class AppComponent implements OnInit{
 
     //SHOW OR HIDE STUFF
     showHideMain = true;
-    showHideTrunk = false;
+    showHideTrunk = true;
 
     mainAndTrunkButtonHandler(event){
         if(event == "trunk"){
@@ -539,6 +538,7 @@ export class AppComponent implements OnInit{
     premiumValue = 1;
     discordValue = 1;
     doubleExpValue = 1;
+    fifteenPercetangeValue = 1;
 
     currentLevel = null;
     currentLevelExp = null;
@@ -674,6 +674,15 @@ export class AppComponent implements OnInit{
         this.calculateFinal(this.currentLevel, this.currentLevelExp, this.targetLevel, this.vouchersPerRun, this.expPerRun);
     }
 
+    onFifteenPercentChange(event){
+        if(event.checked){
+            this.fifteenPercetangeValue = 1.15;
+        }else{
+            this.fifteenPercetangeValue = 1;
+        }
+        this.calculateFinal(this.currentLevel, this.currentLevelExp, this.targetLevel, this.vouchersPerRun, this.expPerRun);
+    }
+
     calculateFinal(from, fromExp, to, voucherRun, expRun){
 
         this.expNeeded = null;
@@ -705,7 +714,8 @@ export class AppComponent implements OnInit{
 
             expTotal = expTotal - fromExp;
             this.expNeeded = expTotal;
-            let voucherWorth = this.defaultVoucherSelected * this.premiumValue * this.discordValue * this.doubleExpValue;
+            let voucherWorth = this.defaultVoucherSelected * ( 1 + this.doubleExpValue - 1 + this.premiumValue - 1 + this.discordValue -1 + this.fifteenPercetangeValue -1);
+            //let voucherWorth = this.defaultVoucherSelected * this.premiumValue * this.discordValue * this.doubleExpValue;
             //voucherWorth = parseFloat(voucherWorth.toFixed(2));
 
             if(expRun > 0 && expRun != null){

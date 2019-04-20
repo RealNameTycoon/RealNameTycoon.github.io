@@ -19,7 +19,7 @@
         <!--<a  style="margin-right: 15px" mat-raised-button href="https://realnametycoon.github.io/old/">OLD LOOK</a>-->
         <button mat-stroked-button (click)="openUpdateDialog()">
             <b class="toolBarText">
-            Updated 12/05/2018
+            Updated 20/04/2019
             </b>
         </button>
     </div>
@@ -90,9 +90,11 @@
                             </mat-form-field>
 
                             <div fxLayout="row" fxLayout.xs="column">
-                                <mat-checkbox [(value)]="premiumValue" (change)="onPremiumChange($event)" fxFlex="33">Premium</mat-checkbox>
-                                <mat-checkbox [(value)]="discordValue" (change)="onDiscordChange($event)" fxFlex="33">Discord Link</mat-checkbox>
-                                <mat-checkbox disabled="true" [(value)]="doubleExpValue" (change)="onDoubleExpChange($event)" fxFlex="33">Double Exp</mat-checkbox>
+                                <mat-checkbox [(value)]="premiumValue" (change)="onPremiumChange($event)" fxFlex="25">Premium</mat-checkbox>
+                                <mat-checkbox [(value)]="discordValue" (change)="onDiscordChange($event)" fxFlex="25">Discord Link</mat-checkbox>
+                                <mat-checkbox [(value)]="doubleExpValue" (change)="onDoubleExpChange($event)" fxFlex="25">Double Exp</mat-checkbox>
+                                <mat-checkbox [(value)]="fifteenPercetangeValue" (change)="onFifteenPercentChange($event)" fxFlex="25">15% Bonus</mat-checkbox>
+
                             </div>
 
                         </form>
@@ -124,7 +126,7 @@
                                 </mat-form-field>
 
                                 <mat-form-field>
-                                    <input disabled matInput type="text" placeholder="Voucher Worth" value="{{defaultVoucherSelected * premiumValue * discordValue *doubleExpValue | number}}">
+                                    <input disabled matInput type="text" placeholder="Voucher Worth" value="{{defaultVoucherSelected * ( 1 + doubleExpValue - 1 + premiumValue - 1 + discordValue -1 + fifteenPercetangeValue -1) | number}}">
                                 </mat-form-field>
 
 
@@ -161,6 +163,10 @@
                                             <mat-list-item>
                                                 <h4 style="flex: 25">Discord Link</h4>
                                                 <h3 style="flex: 90" matSubheader>Toggle this if you have your discord linked with the server.</h3>
+                                            </mat-list-item>
+                                            <mat-list-item>
+                                                <h4 style="flex: 25">15% Bonus</h4>
+                                                <h3 style="flex: 90" matSubheader>Bonus exp time that can be acquired.</h3>
                                             </mat-list-item>
                                         </mat-list>
                                     </mat-tab>
