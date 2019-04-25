@@ -455,45 +455,59 @@ export class AppComponent implements OnInit{
                 {value: 0.005, viewValue: 'Fish Meat'},
                 {value: 0.8, viewValue: 'Gym'},
                 {value: 0.2, viewValue: 'Helipilot'},
-                {value: 0.2, viewValue: 'Hunting'},
                 {value: 2.5, viewValue: 'Medic'}
             ]
         },
         {
             name: 'Piloting',
             vouchers: [
-                {value: 0.2, viewValue: 'Piloting: Airline Pilot'},
-                {value: 0.2, viewValue: 'Piloting: Cargo Pilot'},
-                {value: 0.1, viewValue: 'Piloting: Player'}
+                {value: 0.2, viewValue: 'Airline Pilot'},
+                {value: 0.2, viewValue: 'Cargo Pilot'},
+                {value: 0.1, viewValue: 'Player'}
             ]
         },
         {
             name: 'Garbage',
             vouchers: [
-                {value: 0.15, viewValue: 'Garbage: Garbage'},
-                {value: 0.15, viewValue: 'Garbage: Player'},
-                {value: 0.15, viewValue: 'Garbage: Trucking'}
+                {value: 0.15, viewValue: 'Garbage'},
+                {value: 0.15, viewValue: 'Player'},
+                {value: 0.15, viewValue: 'Trucking'}
+            ]
+        },
+        {
+            name: 'Hunter',
+            vouchers: [
+                {value: 0.15, viewValue: 'Meat → Hunting'},
+                {value: 0.05, viewValue: 'Meat → Player'},
+                {value: 0.02, viewValue: 'Livestock → Hunting'},
+                {value: 0.01, viewValue: 'Livestock → Player'},
+                {value: 0.04, viewValue: 'Livestock Premium → Hunting'},
+                {value: 0.02, viewValue: 'Livestock Premium → Player'},
+                {value: 0.17, viewValue: 'Meat & Livestock → Hunting'},
+                {value: 0.06, viewValue: 'Meat & Livestock → Player'},
+                {value: 0.19, viewValue: 'Meat & Livestock Premium → Hunting'},
+                {value: 0.07, viewValue: 'Meat & Livestock Premium → Player'}
             ]
         },
         {
             name: 'Mail',
             vouchers: [
-                {value: 0.4, viewValue: 'Mail: PostOP'},
-                {value: 0.6, viewValue: 'Mail: Player'}
+                {value: 0.4, viewValue: 'PostOP'},
+                {value: 0.6, viewValue: 'Player'}
             ]
         },
         {
             name: 'Police',
             vouchers: [
-                {value: 0.4, viewValue: 'Police: Police'},
-                {value: 0.4, viewValue: 'Police: Player'}
+                {value: 0.4, viewValue: 'Police'},
+                {value: 0.4, viewValue: 'Player'}
             ]
         },
         {
             name: 'Train',
             vouchers: [
-                {value: 0.3, viewValue: 'Train: Conductor'},
-                {value: 0.2, viewValue: 'Train: Player'}
+                {value: 0.3, viewValue: 'Conductor'},
+                {value: 0.2, viewValue: 'Player'}
             ]
         }
     ];
