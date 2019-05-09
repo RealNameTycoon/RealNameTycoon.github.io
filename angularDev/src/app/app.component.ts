@@ -493,7 +493,7 @@ export class AppComponent implements OnInit{
             name: 'Mail',
             vouchers: [
                 {value: 0.6, viewValue: 'PostOP'},
-                {value: 0.5, viewValue: 'Player'}
+                {value: 0.4, viewValue: 'Player'}
             ]
         },
         {
