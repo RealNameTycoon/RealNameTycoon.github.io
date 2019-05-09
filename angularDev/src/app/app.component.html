@@ -89,11 +89,18 @@
                                 </mat-select>
                             </mat-form-field>
 
-                            <div fxLayout="row" fxLayout.xs="column">
-                                <mat-checkbox [(value)]="premiumValue" (change)="onPremiumChange($event)" fxFlex="25">Premium</mat-checkbox>
-                                <mat-checkbox [(value)]="discordValue" (change)="onDiscordChange($event)" fxFlex="25">Discord Link</mat-checkbox>
-                                <mat-checkbox [(value)]="doubleExpValue" (change)="onDoubleExpChange($event)" fxFlex="25">Double Exp</mat-checkbox>
-                                <mat-checkbox [(value)]="fifteenPercetangeValue" (change)="onFifteenPercentChange($event)" fxFlex="25">15% Bonus</mat-checkbox>
+                            <div fxLayout="column"  fxLayout.xs="column">
+                                <div fxLayout="row"  fxLayout.xs="column">
+                                    <mat-checkbox [(value)]="premiumValue" (change)="onPremiumChange($event)" fxFlex="33">Premium</mat-checkbox>
+                                    <mat-checkbox [(value)]="discordValue" (change)="onDiscordChange($event)" fxFlex="33">Discord Link</mat-checkbox>
+                                    <mat-checkbox [(value)]="doubleExpValue" (change)="onDoubleExpChange($event)" fxFlex="33">Double Exp</mat-checkbox>
+                                </div>
+                                <div fxLayout="row"  fxLayout.xs="column">
+                                    <mat-checkbox [(value)]="fifteenPercetangeValue" (change)="onFifteenPercentChange($event)" fxFlex="33">15% Bonus</mat-checkbox>
+                                    <mat-checkbox [(value)]="factionBonus" (change)="onFactionBonus($event)" fxFlex="33">5% Faction bonus</mat-checkbox>
+                                </div>
+
+
 
                             </div>
 
@@ -126,7 +133,7 @@
                                 </mat-form-field>
 
                                 <mat-form-field>
-                                    <input disabled matInput type="text" placeholder="Voucher Worth" value="{{defaultVoucherSelected * ( 1 + doubleExpValue - 1 + premiumValue - 1 + discordValue -1 + fifteenPercetangeValue -1) | number}}">
+                                    <input disabled matInput type="text" placeholder="Voucher Worth" value="{{defaultVoucherSelected * ( 1 + doubleExpValue - 1 + premiumValue - 1 + discordValue -1 + fifteenPercetangeValue -1 + factionBonus -1) | number}}">
                                 </mat-form-field>
 
 

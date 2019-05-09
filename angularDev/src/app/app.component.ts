@@ -492,8 +492,8 @@ export class AppComponent implements OnInit{
         {
             name: 'Mail',
             vouchers: [
-                {value: 0.4, viewValue: 'PostOP'},
-                {value: 0.6, viewValue: 'Player'}
+                {value: 0.6, viewValue: 'PostOP'},
+                {value: 0.5, viewValue: 'Player'}
             ]
         },
         {
@@ -553,6 +553,7 @@ export class AppComponent implements OnInit{
     discordValue = 1;
     doubleExpValue = 1;
     fifteenPercetangeValue = 1;
+    factionBonus = 1;
 
     currentLevel = null;
     currentLevelExp = null;
@@ -697,6 +698,16 @@ export class AppComponent implements OnInit{
         this.calculateFinal(this.currentLevel, this.currentLevelExp, this.targetLevel, this.vouchersPerRun, this.expPerRun);
     }
 
+    onFactionBonus(event){
+        if(event.checked){
+            this.factionBonus = 1.05;
+        }else{
+            this.factionBonus = 1;
+        }
+        this.calculateFinal(this.currentLevel, this.currentLevelExp, this.targetLevel, this.vouchersPerRun, this.expPerRun);
+    }
+
+
     calculateFinal(from, fromExp, to, voucherRun, expRun){
 
         this.expNeeded = null;
@@ -728,7 +739,7 @@ export class AppComponent implements OnInit{
 
             expTotal = expTotal - fromExp;
             this.expNeeded = expTotal;
-            let voucherWorth = this.defaultVoucherSelected * ( 1 + this.doubleExpValue - 1 + this.premiumValue - 1 + this.discordValue -1 + this.fifteenPercetangeValue -1);
+            let voucherWorth = this.defaultVoucherSelected * ( 1 + this.doubleExpValue - 1 + this.premiumValue - 1 + this.discordValue -1 + this.fifteenPercetangeValue -1 + this.factionBonus -1);
             //let voucherWorth = this.defaultVoucherSelected * this.premiumValue * this.discordValue * this.doubleExpValue;
             //voucherWorth = parseFloat(voucherWorth.toFixed(2));
 
