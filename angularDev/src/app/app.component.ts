@@ -469,9 +469,9 @@ export class AppComponent implements OnInit{
         {
             name: 'Garbage',
             vouchers: [
-                {value: 0.15, viewValue: 'Garbage'},
-                {value: 0.15, viewValue: 'Player'},
-                {value: 0.15, viewValue: 'Trucking'}
+                {value: 0.2, viewValue: 'Garbage'},
+                {value: 0.2, viewValue: 'Player'},
+                {value: 0.2, viewValue: 'Trucking'}
             ]
         },
         {
@@ -492,8 +492,8 @@ export class AppComponent implements OnInit{
         {
             name: 'Mail',
             vouchers: [
-                {value: 0.6, viewValue: 'PostOP'},
-                {value: 0.4, viewValue: 'Player'}
+                {value: 0.4, viewValue: 'PostOP'},
+                {value: 0.2, viewValue: 'Player'}
             ]
         },
         {
