@@ -507,7 +507,7 @@ export class AppComponent implements OnInit{
             name: 'Train',
             vouchers: [
                 {value: 0.3, viewValue: 'Conductor'},
-                {value: 0.2, viewValue: 'Player'}
+                {value: 0.1, viewValue: 'Player'}
             ]
         }
     ];
